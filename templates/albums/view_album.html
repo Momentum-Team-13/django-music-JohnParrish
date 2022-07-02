@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ album.title }}</h1>
+<h2>Artist: {{ album.artist }}</h2>
+<p><a href="{% url 'edit_albums' pk=album.pk %}">Edit an Album</a><br>
+    <a href="{% url 'delete_album' pk=album.pk %}">Delete an Album</a><br>
+</p>
+<p><a href="{% url 'list_albums' %}">Back</a></p>
+{% endblock %}
