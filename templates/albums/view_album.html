@@ -3,6 +3,7 @@
 {% block content %}
 <h1>{{ album.title }}</h1>
 <h2>Artist: {{ album.artist }}</h2>
+<p>Created at: {{ album.created_at }}</p>
 <p><a href="{% url 'edit_albums' pk=album.pk %}">Edit an Album</a><br>
     <a href="{% url 'delete_album' pk=album.pk %}">Delete an Album</a><br>
 </p>

@@ -8,5 +8,11 @@
 <div>
     <a href="{% url 'view_album' pk=album.pk %}">{{ album.title }}</a>
 </div>
+
+{% if album in favorite_albums %}
+<h1>FAVORITE</h1>
+{% endif %}
+
 {% endfor %}
+
 {% endblock %}

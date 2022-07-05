@@ -6,7 +6,8 @@ from .forms import AlbumForm
 
 def list_albums(request):
     albums = Album.objects.all()
-    return render(request, "albums/list_albums.html", {"albums": albums})
+    favorite_albums = [album for album in albums if album.check_is_user_favorite(request.user)]
+    return render(request, "albums/list_albums.html", {"albums": albums, "favorite_albums": favorite_albums})
 
 
 def add_albums(request):
